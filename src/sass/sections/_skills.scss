@@ -1,0 +1,65 @@
+#skills {
+    background-color: $secondary-color;
+    background-image: linear-gradient(
+      135deg,
+      $secondary-color 0%,
+      $primary-color 100%
+    );
+    color: $white-color;
+    height: 100%;
+    border-top: 0px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    padding-bottom: 10%;
+  
+    @include respond(tab-land) {
+      height: 100%;
+      -webkit-clip-path: none;
+      clip-path: none;
+    }
+  
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding-top: 2rem;
+  
+      @include respond(phone) {
+        padding-bottom: 5rem;
+      }
+  
+      .skills-item {
+        background-color: $tile-color;
+        border-radius: 5px;
+        padding: 2rem;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  
+        @include respond(tab-port-sm) {
+          padding: 1.5rem;
+        }
+  
+        .skills-title {
+          font-size: 2rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+          text-align: center;
+          color: $primary-color;
+  
+          @include respond(phone) {
+            font-size: 1.8rem;
+          }
+        }
+  
+        .skills-description {
+          font-size: 1.6rem;
+          text-align: center;
+          color: $dark-blue-text;
+  
+          @include respond(phone) {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,114 @@
+#experiences {
+  background-color: $white-color;
+  color: $dark-blue-text;
+  margin-top: -10rem;
+  padding-top: 15rem;
+
+  @include respond(tab-land) {
+    margin-top: 0;
+    padding-top: 5rem;
+  }
+
+  .experience-wrapper {
+    margin-bottom: 15rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+
+    @include respond(phone) {
+      margin-bottom: 0rem;
+    }
+
+    .row {
+      display:flex;
+      flex-wrap: wrap;
+      flex-direction: column; // Stack tiles vertically
+      gap: 2rem; // Add spacing between tiles
+      margin-left: 0;
+      @include respond(phone) {
+        gap: 1.5rem;
+      }
+    }
+
+    .experience-tile {
+      background-color: $tile-color;
+      color: $dark-grey;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      width: 100%; // Each tile takes the full row
+      max-width: 100%; // Prevent shrinking or side gaps
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      @include respond(phone) {
+        padding: 1.5rem;
+      }
+
+      &__title {
+        font-weight: bold;
+        margin-bottom: 1rem;
+        font-size: $mid-font-size;
+        color: $primary-color;
+
+        @include respond(phone) {
+          font-size: $default-font-size;
+        }
+      }
+
+      &__subtitle {
+        font-size: $font-size-md;
+        font-style: italic;
+        color: $dark-blue-text;
+        margin-bottom: 0.8rem;
+
+        @include respond(phone) {
+          font-size: $default-font-size;
+        }
+      }
+
+      &__details {
+        font-weight: bold;
+        font-size: $font-size-md;
+        color: $dark-grey;
+        margin-bottom: 0.8rem;
+
+        @include respond(phone) {
+          font-size: $default-font-size;
+        }
+      }
+
+      &__date {
+        font-size: $font-size-md;
+        color: $dark-grey;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+
+        @include respond(phone) {
+          font-size: $default-font-size;
+        }
+      }
+
+      &__description {
+        list-style-type: disc;
+        margin-left: 2rem;
+        text-align: left;
+
+        li {
+          font-size: $font-size-md;
+          color: $dark-grey;
+          margin-bottom: 0.5rem;
+
+          @include respond(phone) {
+            font-size: $default-font-size;
+            margin-bottom: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+}
